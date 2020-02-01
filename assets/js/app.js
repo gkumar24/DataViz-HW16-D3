@@ -1,34 +1,34 @@
 // Define SVG area
-// -------------------------------------------------------------------------------------------
-var svgWidth = 960;
-var svgHeight = 500;
+    // -------------------------------------------------------------------------------------------
+    var svgWidth = 960;
+    var svgHeight = 500;
 
-// define Margin of the chart
-var margin = {
-    top: 20,
-    right: 40,
-    bottom: 100,
-    left: 100
-};
+    // define Margin of the chart
+    var margin = {
+        top: 20,
+        right: 40,
+        bottom: 100,
+        left: 100
+    };
 
-// calculate the width and height of the chart area
-var width = svgWidth - margin.left - margin.right;
-var height = svgHeight - margin.top - margin.bottom;
+    // calculate the width and height of the chart area
+    var width = svgWidth - margin.left - margin.right;
+    var height = svgHeight - margin.top - margin.bottom;
 
-// Create an SVG wrapper, append an SVG group that will hold our chart,
+    // Create an SVG wrapper, append an SVG group that will hold our chart,
 
-var svg = d3.select("#scatter")
-    .append("svg")
-    .attr("width", svgWidth)
-    .attr("height", svgHeight);
+    var svg = d3.select("#scatter")
+        .append("svg")
+        .attr("width", svgWidth)
+        .attr("height", svgHeight);
 
-// Append an SVG group, and shift the latter by left and top margins.
-var chartGroup = svg.append("g")
-    .attr("transform", `translate(${margin.left}, ${margin.top})`);
+    // Append an SVG group, and shift the latter by left and top margins.
+    var chartGroup = svg.append("g")
+        .attr("transform", `translate(${margin.left}, ${margin.top})`);
 
-// End of Define SVG area....................................................................................................
+    // End of Define SVG area....................................................................................................
 
-
+    
 // xScale() -------------------------------------------------------------------------------------------
 // function for xLinearScale
 // function used for updating x-scale var upon click on axis label
@@ -142,6 +142,8 @@ function updateToolTip(chosenXAxis, chosenYAxis, circlesGroup, xToolTipLabel, yT
 // Retrieve data from the CSV file and execute everything below
 d3.csv("assets/data/data.csv").then(function (riskData, err) {
     if (err) throw err;
+
+    
 
     // Parse Data/Cast as numbers
     // parse the data as number using unary (+) operator
